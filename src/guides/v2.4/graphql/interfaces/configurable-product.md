@@ -20,7 +20,27 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
+`configurable_options_selection_metadata(selectedConfigurableOptionValues: [ID!])` | ConfigurableOptionsSelectionMetadata | Metadata for the specified configurable options
 `variants` | ConfigurableVariant | An array of variants of products
+
+### ConfigurableOptionsSelectionMetadata object {#ConfigurableOptionsSelectionMetadata}
+
+The `ConfigurableOptionsSelectionMetadata` object contains metadata about selected and unselected configurable options.
+
+Attribute | Type | Description
+--- | --- | ---
+`media_gallery` | [[MediaGalleryInterface!]]({{page.baseurl}}/graphql/interfaces/product-interface.html#MediaGalleryInterface) | Product images and videos corresponding to the specified configurable options selection
+`options_available_for_selection` | [[ConfigurableOptionAvailableForSelection!]](#ConfigurableOptionAvailableForSelection) | Configurable options available for further selection based on the current selection
+`variant` | [SimpleProduct]({{page.baseurl}}/graphql/interfaces/simple-product.html) | Details about the simple product selected after the shopper has chosen all the configurable options. The object should be null until the shopper selects each configurable option
+
+### ConfigurableOptionAvailableForSelection object {#ConfigurableOptionAvailableForSelection}
+
+The `ConfigurableOptionAvailableForSelection` object contains the following attributes.
+
+Attribute | Type | Description
+--- | --- | ---
+`attribute_code` | String! | An attribute code string that uniquely identifies a configurable option
+`option_value_uids` | [ID!]! | If the configurable option has been selected, this attribute contains the UID of the selected option. Otherwise, this attribute contains the list of UIDs of possible selectable options
 
 ### ConfigurableVariant object
 
@@ -737,6 +757,70 @@ The following `products` query returns `ConfigurableProduct` information about t
 ```
 
 {% endcollapsible %}
+
+### Return information about selected and unselected configurable options
+
+In the following query, the shopper has selected the color (`uid` = Y29uZmlndXJhYmxlLzkzLzUz) for configurable product `WSH12`, but not the size. The response includes the `uid` for the selected color and all the possible `uid` values for the size. The `variant` object is null because the shopper has not selected a size.
+
+**Request:**
+
+```graphql
+{
+  products(filter: {sku: {eq: "WSH12"}}) {
+    items {
+      ... on ConfigurableProduct {
+        configurable_options_selection_metadata(selectedConfigurableOptionValues:["Y29uZmlndXJhYmxlLzkzLzUz" ]) {
+          options_available_for_selection {
+            attribute_code
+            option_value_uids
+          }
+          variant {
+            sku
+            color
+            size
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response:**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "configurable_options_selection_metadata": {
+            "options_available_for_selection": [
+              {
+                "attribute_code": "size",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzE0NC8xNzE=",
+                  "Y29uZmlndXJhYmxlLzE0NC8xNzI=",
+                  "Y29uZmlndXJhYmxlLzE0NC8xNzM=",
+                  "Y29uZmlndXJhYmxlLzE0NC8xNzQ=",
+                  "Y29uZmlndXJhYmxlLzE0NC8xNzU="
+                ]
+              },
+              {
+                "attribute_code": "color",
+                "option_value_uids": [
+                  "Y29uZmlndXJhYmxlLzkzLzUz"
+                ]
+              }
+            ],
+            "variant": null
+          }
+        }
+      ]
+    }
+  }
+}
+```
 
 ### Return swatch information
 
