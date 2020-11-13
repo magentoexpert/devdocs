@@ -251,6 +251,11 @@ pages:
         - label: createEmptyCart mutation
           url: /graphql/mutations/create-empty-cart.html
 
+        - label: createGiftRegistry mutation
+          url: /graphql/mutations/create-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: createKlarnaPaymentsSession mutation
           url: /graphql/mutations/create-klarna-payments-session.html
           exclude_versions: ["2.3"]
@@ -272,11 +277,6 @@ pages:
 
         - label: createWishlist mutation
           url: /graphql/mutations/create-wishlist.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
-
-        - label: createGiftRegistry mutation
-          url: /graphql/mutations/create-gift-registry.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
@@ -395,6 +395,11 @@ pages:
         - label: setShippingMethodsOnCart mutation
           url: /graphql/mutations/set-shipping-method.html
 
+        - label: shareGiftRegistry mutation
+          url: /graphql/mutations/share-gift-registry.html
+          edition: ee-only
+          exclude_versions: ["2.3"]
+
         - label: subscribeEmailToNewsletter mutation
           url: /graphql/mutations/subscribe-email-to-newsletter.html
           exclude_versions: ["2.3"]
@@ -442,11 +447,6 @@ pages:
 
         - label: updateWishlist mutation
           url: /graphql/mutations/update-wishlist.html
-          edition: ee-only
-          exclude_versions: ["2.3"]
-
-        - label: shareGiftRegistry mutation
-          url: /graphql/mutations/share-gift-registry.html
           edition: ee-only
           exclude_versions: ["2.3"]
 
