@@ -4,7 +4,7 @@ description: This page contains recent changes that we think you'd like to know 
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: "/whats-new.html"
 thread: "/whatsnew-feed.xml"
-updated: Mon Dec 14 11:18:17 2020
+updated: Mon Dec 14 12:08:22 2020
 entries:
 - description: Added an [example](https://devdocs.magento.com/guides/v2.4/ui_comp_guide/concepts/ui_comp_uiregistry.html)
     of asynchronously retrieving UI components from the registry.
@@ -30,25 +30,6 @@ entries:
   link: https://github.com/magento/devdocs/pull/8303
   contributor: sathiyaaa
   profile: https://github.com/sathiyaaa
-- description: 'report. It should be mentioned in context of the company features
-    as a whole.<br/>## Affected DevDocs pages<br/><!-- REQUIRED List the affected
-    pages on devdocs.magento.com (URLs). Not needed for large numbers of files. --><br/>-  https://devdocs.magento.com/guides/v2.4/graphql/queries/company.html
-    (doesn''t exist yet)<br/>## Links to Magento source code<br/><!--  OPTIONAL -
-    REMOVE THIS SECTION IF NOT USED. If this pull request references a file in a Magento
-    codebase repository, add it here. --><br/>-  ...<br/><!--<br/>If you are fixing
-    a GitHub issue, note it using GitHub keyword format (https://help.github.com/en/articles/closing-issues-using-keywords#closing-an-issue-in-a-different-repository)
-    to close the issue when this pull request is merged. Example: `Fixes #1234`<br/>`master`
-    is the default branch. Merged pull requests to `master` go live on the site automatically.
-    Any requested changes to content on the `master` branch must be related to the
-    released codebase. Any content related to future releases goes in the `develop`
-    branch.<br/>See Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
-    for more information.<br/>-->'
-  versions: 2.4.2
-  type: Technical
-  date: December 14, 2020
-  link: https://github.com/magento/devdocs/pull/8305
-  contributor: keharper
-  profile: https://github.com/keharper
 - description: 'Added the following mutations in support of B2B companies: [createCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/create-company-role.html),
     [updateCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/update-company-role.html),
     [deleteCompanyRole](https://devdocs.magento.com/guides/v2.4/graphql/mutations/delete-company-role.html),
@@ -143,7 +124,7 @@ entries:
     for the 1.0.10 Magento Quality Patch (MQP) package release.
   versions: ''
   type: Major Update
-  date: November 13, 2020
+  date: December 14, 2020
   link: https://github.com/magento/devdocs/pull/8227
   contributor: Rykh
   profile: https://github.com/Rykh
