@@ -30,7 +30,7 @@ We have broken the installation process into three main parts: getting started, 
 
 ## Precondition: How advanced are you?
 
-Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is?
+Do you know what a "terminal" application is? Do you know what operating system your server runs? Do you know what Apache is? Are you using Plesk with Centos and SSH access? Are you using cPanel with SSH access?
 
 If not, see the [Installation overview][].
 
@@ -75,6 +75,9 @@ You must install the Magento software using the [command line][].
 The following example shows how to install using the command line with the following options:
 
 *  The Magento software is installed in the `/var/www/html/magento2` directory, which means your storefront URL is `http://192.0.2.5/magento2/`
+   Linux users deploying Plesk with Centos should assume that Magento software is installed in '/var/www/vhosts/example.com/httpdocs/magento2/' and 
+   your storefront URL is 'http://example.com/magento2/'
+   
 *  The database server is on the same host as the web server.
 
    The database name is `magento`, and the username and password are both `magento`
