@@ -37,15 +37,18 @@ If not, see the [Installation overview][].
 ## Installation part 1: Getting started
 
 1. See the [system requirements][].
-1. If your system lacks any requirements, see the prerequisites documentation:
+2. If your system lacks any requirements, see the prerequisites documentation:
 
    *  [Apache][]
    *  [PHP][]
    *  [MySQL][]
    *  [Elasticsearch][]
 
-1. Just as importantly, set up the [Magento file system owner][] on the server.
-1. Switch to the [Magento file system owner][].
+3. Just as importantly, set up the [Magento file system owner][] on the server. Please note the Linux users deploying Plesk with Centos, the Plesk [System User] is the [Magento  
+   file sytem owner]. You cannot set up a custom user with rwx and ownership privileges as described in this guide. Plesk has mandatory groups "psaserv" and "psacln" which are 
+   mandatory and automatically applied to all Plesk Users who are referreed to as [Sytem User]
+   
+4. Switch to the [Magento file system owner][].
 
 ### Get the Magento software
 
@@ -74,7 +77,10 @@ You must install the Magento software using the [command line][].
 
 The following example shows how to install using the command line with the following options:
 
-*  The Magento software is installed in the `/var/www/html/magento2` directory, which means your storefront URL is `http://192.0.2.5/magento2/`
+*  The Magento software is installed in the `/var/www/html/magento2` directory, which means your storefront URL is `http://192.0.2.5/magento2/` (for testing server)
+   Linux users deploying Plesk with Centos please note the default location is assumed as 'var/www/vhosts/example.com/httpdocs/magento2' which means your storefront URL is 
+   'http://example.com/magento2'
+   
 *  The database server is on the same host as the web server.
 
    The database name is `magento`, and the username and password are both `magento`
